@@ -17,7 +17,6 @@ public class Incident {
     @SerializedName("typeIncidentObject")
     private transient TypeIncident typeIncident;
 
-    @SerializedName("typeIncident")
     private int idTypeIncident;
 
     private String descriptionIncident;
