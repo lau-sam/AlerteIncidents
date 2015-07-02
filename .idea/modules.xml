@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Alerteincidents.iml" filepath="$PROJECT_DIR$/Alerteincidents.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Alerteincidents.iml" filepath="$PROJECT_DIR$/Alerteincidents.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AlerteIncidents.iml" filepath="$PROJECT_DIR$/AlerteIncidents.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
 </project>
+

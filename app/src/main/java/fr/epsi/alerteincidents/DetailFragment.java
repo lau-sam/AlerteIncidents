@@ -31,7 +31,6 @@ public class DetailFragment extends Fragment {
     }
 
     private void showIncidentDetail(String incident_id) {
-        TextView incident_text_id = (TextView) rootView.findViewById(R.id.incident_text_id);
         TextView incident_text_titre = (TextView) rootView.findViewById(R.id.incident_text_titre);
         TextView incident_text_date = (TextView) rootView.findViewById(R.id.incident_text_date);
         TextView incident_text_type_incident = (TextView) rootView.findViewById(R.id.incident_text_type_incident);
@@ -39,11 +38,9 @@ public class DetailFragment extends Fragment {
         DbHelper mLocalDatabase = new DbHelper(getActivity().getApplication());
         IncidentDB mLocalIncident = mLocalDatabase.getIncidentData(Integer.valueOf(incident_id));
 
-        incident_text_id.setText(mLocalIncident.getString("incident_id"));
         incident_text_titre.setText(mLocalIncident.getString("incident_titre"));
         incident_text_date.setText(mLocalIncident.getString("incident_date"));
         incident_text_type_incident.setText(mLocalIncident.getString("incident_type_id"));
-
     }
 
 }
