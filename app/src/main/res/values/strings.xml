@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Alerte Incidents</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_preferences">Préférences</string>
+    <string name="title_activity_carte">Carte</string>
+    <string name="title_activity_profil">Profil</string>
+    <string name="title_activity_historique">Historique</string>
+    <string name="title_activity_incident">Signaler un incident</string>
+    <string name="title">Titre</string>
+    <string name="descriptionIncident">Description</string>
+    <string name="create_incident">Créer incident</string>
+    <string name="incident_type">Type d\'incident</string>
+    <string name="titreIncident">Entrez un titre d\'incident</string>
+    <string name="descIncident">Entrez une description d\'incident</string>
+    <string name="title_activity_detail">DetailActivity</string>
+    <string name="title_activity_modification_historique">ModificationHistoriqueActivity</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

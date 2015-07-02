@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/TableLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_vertical|center_horizontal"
+    android:gravity="center_horizontal"
+    android:background="@drawable/fond_home2">
+    <!-- android:background="@drawable/splashscreen"  -->
+
+    <LinearLayout
+        android:id="@+id/ajout_incident_linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical" >
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <EditText
+                android:id="@+id/user_adress"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:ems="10"
+                android:hint="Saisir une adresse"
+                android:maxEms="8"
+                android:minEms="8" >
+
+                <requestFocus />
+
+            </EditText>
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/TableRow01"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:gravity="center" >
+
+            <Button
+                android:id="@+id/ajouter_button"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="#00004c"
+                android:maxEms="5"
+                android:maxLength="50"
+                android:minEms="5"
+                android:text="Ajouter"
+                android:textColor="#FFFFFF" />
+
+            <Button
+                android:id="@+id/annuler_button"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="#00004c"
+                android:maxEms="5"
+                android:maxLength="50"
+                android:minEms="5"
+                android:text="Annuler"
+                android:textColor="#FFFFFF" />
+
+        </TableRow>
+
+    </LinearLayout>
+
+</TableLayout>

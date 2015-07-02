@@ -1,0 +1,36 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="fr.epsi.alerteincidents.MainActivity" >
+
+    <item
+        android:id="@+id/action_main"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="Accueil"/>
+
+    <item
+        android:id="@+id/action_carte"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="Carte"/>
+
+    <item
+        android:id="@+id/action_historique"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="Historique"/>
+
+    <item
+        android:id="@+id/action_incident"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="Incident"/>
+
+    <item
+        android:id="@+id/action_preferences"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="Préférences"/>
+    
+
+</menu>

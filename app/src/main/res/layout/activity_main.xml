@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fragment_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fond_home2">
+
+    <!-- Home wallpaper
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/fond_home"/>
+        -->
+    
+	<!-- Layout content home buttons -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true">
+
+        <ImageButton
+            android:id="@+id/imageBtnMap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/carte"
+            android:layout_above="@+id/imageBtnHisto"
+            android:layout_alignParentLeft="true"
+            android:onClick="newMap"
+            />
+
+        <ImageButton
+            android:id="@+id/imageBtnIncident"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/alerter"
+            android:layout_above="@+id/imageBtnPreference"
+            android:layout_alignParentRight="true"
+            android:onClick="newIncident"/>
+
+        <ImageButton
+            android:id="@+id/imageBtnHisto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/historique"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:onClick="newHistorique"/>
+
+        <ImageButton
+            android:id="@+id/imageBtnPreference"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/option"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:onClick="newPreference"/>
+
+    </RelativeLayout>
+
+</FrameLayout>

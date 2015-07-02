@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="?android:attr/listPreferredItemHeight"
+    android:padding="6dip"
+    android:id="@+id/layout_item_historique">
+
+    <ImageView
+        android:id="@+id/historiqueIcon"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="6dip"
+        android:contentDescription="Type incident image"
+        android:src="@drawable/ic_launcher" />
+
+    <TextView
+        android:id="@+id/historiqueDateList"
+        android:layout_width="fill_parent"
+        android:layout_height="26dip"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@id/historiqueIcon"
+        android:ellipsize="marquee"
+        android:singleLine="true"
+        android:text="Date de l'ajout"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/historiqueTitreList"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/historiqueDateList"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignWithParentIfMissing="true"
+        android:layout_toRightOf="@id/historiqueIcon"
+        android:gravity="center_vertical"
+        android:text="Titre de l'incident"
+        android:textSize="16sp" />
+
+</RelativeLayout>
