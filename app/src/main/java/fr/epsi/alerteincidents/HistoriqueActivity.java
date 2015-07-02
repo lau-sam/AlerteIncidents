@@ -7,6 +7,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -14,13 +15,22 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
+import classes.metier.Incident;
 import classes.metier.IncidentDB;
+import classes.metier.TypeIncident;
 import fr.epsi.database.DbHelper;
+import fr.epsi.helper.RestApi;
+import retrofit.Callback;
+import retrofit.RestAdapter;
+import retrofit.RetrofitError;
 
 public class HistoriqueActivity extends Activity {
 	// used to store app title
@@ -168,11 +178,45 @@ public class HistoriqueActivity extends Activity {
 
 				break;
 			case R.id.bouton_enregistrer:
-				alertbox("Information", "Votre modification a bien ete effectuee.");
-				TextView incident_text_titre = (TextView)
-						((Activity) v.getContext()).findViewById(R.id.histo_incident_text_titre);//findViewById(R.id.incident_text_titre);
-				Log.e("HistoriqueActivity.java/onButtonClick() : PUT a realiser",String.valueOf(incident_text_titre.getText()));
-				break;
+				EditText incident_text_titre = (EditText)
+						((Activity) v.getContext()).findViewById(R.id.histo_incident_text_titre);
+                EditText incident_text_date = (EditText)
+                        ((Activity) v.getContext()).findViewById(R.id.histo_incident_text_date);
+                EditText incident_text_type = (EditText)
+                        ((Activity) v.getContext()).findViewById(R.id.histo_incident_text_type_incident);
+                TextView incident_text_id = (TextView)
+                        ((Activity) v.getContext()).findViewById(R.id.histo_incident_text_id);
+
+                Log.e("HistoriqueActivity.java/onButtonClick() : PUT a realiser",String.valueOf(incident_text_titre.getText()));
+
+                Incident i = new Incident(Integer.parseInt(incident_text_id.getText().toString()), Build.SERIAL, incident_text_titre.getText().toString(), Integer.parseInt(incident_text_type.getText().toString()), null,
+                        java.text.DateFormat.getDateTimeInstance().format(Calendar.getInstance().getTime()));
+
+                RestAdapter restAdapter = new RestAdapter.Builder()
+                        .setEndpoint(MainActivity.API_URL)
+                        .setLogLevel(RestAdapter.LogLevel.FULL)
+                        .setLog(new RestAdapter.Log() {
+                            @Override
+                            public void log(String msg) {
+                                Log.d("Retrofit", msg);
+                            }
+                        }).build();
+                RestApi methods = restAdapter.create(RestApi.class);
+                methods.updateIncident(i, new Callback<Incident>() {
+                    @Override
+                    public void success(Incident incident, retrofit.client.Response response) {
+                        /* update bd locale */
+
+                        Toast.makeText(HistoriqueActivity.this, "L'incident a bien été modifié", Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void failure(RetrofitError error) {
+                        Toast.makeText(HistoriqueActivity.this, "Erreur, vérifiez votre connexion internet", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+                break;
 		}
 	}
 

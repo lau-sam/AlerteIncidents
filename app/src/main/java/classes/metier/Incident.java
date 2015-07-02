@@ -60,6 +60,20 @@ public class Incident {
         this.listeCommentaire = new ArrayList<Commentaire>();
     }
 
+    public Incident(int id, String user, String titre, int idTypeIncident, String descriptionIncident,
+                     String d) {
+        this.idIncident = id;
+        this.dateIncident = d;
+        this.user = user;
+        this.titreIncident = titre;
+        this.idTypeIncident = idTypeIncident;
+        this.descriptionIncident = descriptionIncident;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.listeMedia = new ArrayList<Media>();
+        this.listeAvis = new ArrayList<Avis>();
+        this.listeCommentaire = new ArrayList<Commentaire>();
+    }
     /**
      * Constructeur complet avec liste des mÃˆdias recopiÃˆe.
      */

@@ -41,6 +41,12 @@ public class TypeIncident {
         this.descriptionType = "";
     }
 
+    public TypeIncident(int id) {
+        this.id = id;
+        this.nomType = "";
+        this.descriptionType = "";
+    }
+
     public TypeIncident(TypeIncident t) {
         this.id = t.id;
         this.nomType = t.nomType;

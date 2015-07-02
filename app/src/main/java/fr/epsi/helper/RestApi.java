@@ -11,6 +11,7 @@ import retrofit.http.FormUrlEncoded;
 import retrofit.http.GET;
 import retrofit.http.Multipart;
 import retrofit.http.POST;
+import retrofit.http.PUT;
 import retrofit.http.Part;
 import retrofit.http.Path;
 
@@ -39,4 +40,7 @@ public interface RestApi {
 
     @GET("/incidents/parEMEI/{user}")
     public List<Incident> getIncidentsByUser(@Path("user") String imei);
+
+    @PUT("/incident")
+    public void updateIncident(@Body Incident i, Callback<Incident> cb);
 }
