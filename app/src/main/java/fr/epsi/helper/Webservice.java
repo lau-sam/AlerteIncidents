@@ -41,7 +41,7 @@ public class Webservice {
 	}
 	
 	//param : imei de l'auteur /incidents/parIMEI/[var imei]
-	public String getIncidentsByImei(int imei){
+	public String getIncidentsByImei(String imei){
 		this.url += SERVER_ADRESS + "/incidents/";
 		this.url += "parIMEI/";
 		this.url += imei;
