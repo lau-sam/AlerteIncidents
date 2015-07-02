@@ -23,7 +23,7 @@ public class DbHelper extends SQLiteOpenHelper{
 	//name of db
 	public static final String DATABASE_NAME = "DB_AI.db";
 	//version
-	public static int DATABASE_VERSION = 7;
+	public static int DATABASE_VERSION = 8;
 	// Database creation sql statement
 
 	// Columns Incident Table

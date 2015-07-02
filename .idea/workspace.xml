@@ -38,8 +38,43 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="59f6f95c-ee11-4c56-a3be-b6bdff214961" name="Default" comment="Fin de la base de donnée locale sur les incidents&#10;Fin des markers sur la map">
+<<<<<<< HEAD
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/fr/epsi/database/DbHelper.java" afterPath="$PROJECT_DIR$/app/src/main/java/fr/epsi/database/DbHelper.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/classes/metier/Incident.java" afterPath="$PROJECT_DIR$/app/src/main/java/classes/metier/Incident.java" />
+=======
+      <change type="DELETED" beforePath="C:\Users\Sam Lau\StudioProjects\AlerteIncidents\.idea\libraries\appcompat_v7_19_1_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sam Lau\StudioProjects\AlerteIncidents\.idea\libraries\play_services_7_0_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sam Lau\StudioProjects\AlerteIncidents\.idea\libraries\play_services_ads_7_0_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sam Lau\StudioProjects\AlerteIncidents\.idea\libraries\play_services_analytics_7_0_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sam Lau\StudioProjects\AlerteIncidents\.idea\libraries\play_services_appindexing_7_0_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sam Lau\StudioProjects\AlerteIncidents\.idea\libraries\play_services_appstate_7_0_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sam Lau\StudioProjects\AlerteIncidents\.idea\libraries\play_services_base_7_0_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sam Lau\StudioProjects\AlerteIncidents\.idea\libraries\play_services_cast_7_0_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sam Lau\StudioProjects\AlerteIncidents\.idea\libraries\play_services_drive_7_0_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sam Lau\StudioProjects\AlerteIncidents\.idea\libraries\play_services_fitness_7_0_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sam Lau\StudioProjects\AlerteIncidents\.idea\libraries\play_services_games_7_0_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sam Lau\StudioProjects\AlerteIncidents\.idea\libraries\play_services_gcm_7_0_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sam Lau\StudioProjects\AlerteIncidents\.idea\libraries\play_services_identity_7_0_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sam Lau\StudioProjects\AlerteIncidents\.idea\libraries\play_services_location_7_0_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sam Lau\StudioProjects\AlerteIncidents\.idea\libraries\play_services_maps_7_0_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sam Lau\StudioProjects\AlerteIncidents\.idea\libraries\play_services_nearby_7_0_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sam Lau\StudioProjects\AlerteIncidents\.idea\libraries\play_services_panorama_7_0_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sam Lau\StudioProjects\AlerteIncidents\.idea\libraries\play_services_plus_7_0_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sam Lau\StudioProjects\AlerteIncidents\.idea\libraries\play_services_safetynet_7_0_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sam Lau\StudioProjects\AlerteIncidents\.idea\libraries\play_services_wallet_7_0_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Sam Lau\StudioProjects\AlerteIncidents\.idea\libraries\play_services_wearable_7_0_0.xml" afterPath="" />
+      <change type="MOVED" beforePath="C:\Users\Sam Lau\StudioProjects\AlerteIncidents\Alerteincidents.iml" afterPath="$PROJECT_DIR$/AlerteIncidents.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/fr/epsi/database/DbHelper.java" afterPath="$PROJECT_DIR$/app/src/main/java/fr/epsi/database/DbHelper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/fr/epsi/helper/RequestJson.java" afterPath="$PROJECT_DIR$/app/src/main/java/fr/epsi/helper/RequestJson.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/fr/epsi/alerteincidents/SplashScreen.java" afterPath="$PROJECT_DIR$/app/src/main/java/fr/epsi/alerteincidents/SplashScreen.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/gradle.xml" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/recyclerview_v7_21_0_3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/recyclerview_v7_21_0_3.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/support_annotations_22_0_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/support_annotations_22_0_0.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/support_v4_22_0_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/support_v4_22_0_0.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+>>>>>>> 8a26ff0f68462dcebbe52a25e7efdbc65879241d
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="AlerteIncidents.iws" />
@@ -105,6 +140,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+<<<<<<< HEAD
       <file leaf-file-name="SplashScreen.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/fr/epsi/alerteincidents/SplashScreen.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -191,10 +227,21 @@
             <state vertical-scroll-proportion="0.0" vertical-offset="188" max-vertical-offset="561">
               <caret line="24" column="50" selection-start-line="24" selection-start-column="50" selection-end-line="24" selection-end-column="50" />
               <folding />
+=======
+      <file leaf-file-name="AppController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/fr/epsi/alerteincidents/AppController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-4.1923075">
+              <caret line="45" column="5" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
+>>>>>>> 8a26ff0f68462dcebbe52a25e7efdbc65879241d
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="build.gradle" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
@@ -205,6 +252,8 @@
           </provider>
         </entry>
       </file>
+=======
+>>>>>>> 8a26ff0f68462dcebbe52a25e7efdbc65879241d
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -1715,10 +1764,34 @@
         <option value="$PROJECT_DIR$/app/src/main/java/fr/epsi/helper/RestApi.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/fr/epsi/alerteincidents/HistoriqueAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/app/src/main/java/fr/epsi/database/DbHelper.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/fr/epsi/alerteincidents/SplashScreen.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/fr/epsi/alerteincidents/HistoriqueActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/classes/metier/Incident.java" />
+=======
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/layout_ajout_incident_map.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_historique.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_incident.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/layout_google_play_services_not_available.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/layout_historique_item_adapter.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_preferences.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_detail_info_map.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_detail.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/classes/metier/IncidentDB.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/fr/epsi/alerteincidents/ModificationHistoriqueFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/fr/epsi/alerteincidents/HistoriqueAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_modification_historique.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/fr/epsi/alerteincidents/DetailActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/fr/epsi/alerteincidents/IncidentActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/fr/epsi/alerteincidents/HistoriqueActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/fr/epsi/helper/Webservice.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/fr/epsi/alerteincidents/CarteActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/fr/epsi/helper/RequestJson.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/fr/epsi/database/DbHelper.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/fr/epsi/alerteincidents/SplashScreen.java" />
+>>>>>>> 8a26ff0f68462dcebbe52a25e7efdbc65879241d
       </list>
     </option>
   </component>
@@ -1764,6 +1837,38 @@
       <sortByType />
     </navigator>
     <panes>
+<<<<<<< HEAD
+=======
+      <pane id="PackagesPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AlerteIncidents" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AlerteIncidents" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="classes.metier" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+>>>>>>> 8a26ff0f68462dcebbe52a25e7efdbc65879241d
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -1948,35 +2053,58 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane">
-        <subPane>
+      <pane id="Scope">
+        <subPane subId="Project Files">
           <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AlerteIncidents" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AlerteIncidents" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            <PATH_ELEMENT USER_OBJECT="AlerteIncidents">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="classes.metier" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            <PATH_ELEMENT USER_OBJECT="AlerteIncidents">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+<<<<<<< HEAD
       <pane id="Scratches" />
+=======
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AlerteIncidents" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AlerteIncidents" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AlerteIncidents" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+>>>>>>> 8a26ff0f68462dcebbe52a25e7efdbc65879241d
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2232,8 +2360,13 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
+<<<<<<< HEAD
     <frame x="-4" y="-4" width="1374" height="732" extended-state="6" />
     <editor active="true" />
+=======
+    <frame x="-4" y="-4" width="1448" height="864" extended-state="6" />
+    <editor active="false" />
+>>>>>>> 8a26ff0f68462dcebbe52a25e7efdbc65879241d
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32881355" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32881355" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
@@ -2244,27 +2377,49 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4118644" sideWeight="0.22356495" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297568" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32542372" sideWeight="0.4954683" order="2" side_tool="false" content_ui="tabs" />
+=======
+>>>>>>> 8a26ff0f68462dcebbe52a25e7efdbc65879241d
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32963988" sideWeight="0.49713877" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32881355" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.97118646" sideWeight="0.776435" order="12" side_tool="false" content_ui="tabs" />
+=======
+      <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297568" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="1.0" sideWeight="0.49713877" order="12" side_tool="false" content_ui="tabs" />
+>>>>>>> 8a26ff0f68462dcebbe52a25e7efdbc65879241d
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2322034" sideWeight="0.39274925" order="13" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1925982" sideWeight="0.49170125" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Memory Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="14" side_tool="true" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32904148" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20314735" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+=======
+      <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20314735" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16881259" sideWeight="0.50829875" order="4" side_tool="true" content_ui="tabs" />
+>>>>>>> 8a26ff0f68462dcebbe52a25e7efdbc65879241d
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5022659" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16881259" sideWeight="0.50829875" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19313304" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" x="96" y="96" width="1248" height="708" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2811159" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297568" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32711864" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+=======
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19313304" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" x="96" y="96" width="1248" height="708" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2811159" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Memory Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="14" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32825485" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+>>>>>>> 8a26ff0f68462dcebbe52a25e7efdbc65879241d
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -2291,6 +2446,7 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/src/main/java/fr/epsi/helper/Webservice.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="1887">
@@ -2306,6 +2462,8 @@
         </state>
       </provider>
     </entry>
+=======
+>>>>>>> 8a26ff0f68462dcebbe52a25e7efdbc65879241d
     <entry file="file://$PROJECT_DIR$/app/src/main/java/fr/epsi/alerteincidents/CarteActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="5134" max-vertical-offset="5695">
@@ -2591,6 +2749,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/src/main/java/fr/epsi/helper/Webservice.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.7918919" vertical-offset="731" max-vertical-offset="1819">
@@ -2599,6 +2758,9 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/fr/epsi/helper/RequestJson.java">
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/fr/epsi/alerteincidents/IncidentActivity.java">
+>>>>>>> 8a26ff0f68462dcebbe52a25e7efdbc65879241d
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.154054" vertical-offset="389" max-vertical-offset="2550">
           <caret line="69" column="31" selection-start-line="69" selection-start-column="28" selection-end-line="69" selection-end-column="31" />
@@ -2684,6 +2846,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="373">
@@ -2697,6 +2860,19 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="1224" max-vertical-offset="3621">
           <caret line="72" column="66" selection-start-line="72" selection-start-column="66" selection-end-line="72" selection-end-column="66" />
           <folding />
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/volley/ExecutorDelivery.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5279503">
+          <caret line="98" column="0" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/volley/toolbox/JsonRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+>>>>>>> 8a26ff0f68462dcebbe52a25e7efdbc65879241d
         </state>
       </provider>
     </entry>
@@ -2708,11 +2884,52 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/src/main/java/fr/epsi/database/DbHelper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4707792" vertical-offset="4615" max-vertical-offset="5321">
           <caret line="294" column="54" selection-start-line="294" selection-start-column="53" selection-end-line="294" selection-end-column="54" />
           <folding />
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/fr/epsi/alerteincidents/SplashScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5962733">
+          <caret line="67" column="12" selection-start-line="67" selection-start-column="12" selection-end-line="67" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/fr/epsi/helper/RequestJson.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="64" column="16" selection-start-line="64" selection-start-column="16" selection-end-line="64" selection-end-column="16" />
+          <folding>
+            <element signature="e#2651#4946#0" expanded="true" />
+            <element signature="e#4945#4946#0" expanded="true" />
+            <element signature="e#5555#7722#0" expanded="true" />
+            <element signature="e#7721#7722#0" expanded="true" />
+            <element signature="e#7724#7885#0" expanded="true" />
+            <element signature="e#7884#7885#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/fr/epsi/database/DbHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.45755693">
+          <caret line="25" column="42" selection-start-line="25" selection-start-column="42" selection-end-line="25" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/fr/epsi/alerteincidents/AppController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.1923075">
+          <caret line="45" column="5" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+>>>>>>> 8a26ff0f68462dcebbe52a25e7efdbc65879241d
         </state>
       </provider>
     </entry>

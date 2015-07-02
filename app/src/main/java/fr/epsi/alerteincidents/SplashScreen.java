@@ -11,6 +11,7 @@ import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
 import android.widget.ProgressBar;
 
+import fr.epsi.database.DbHelper;
 import fr.epsi.helper.RequestJson;
 import fr.epsi.helper.RequestJson.mCallback;
 import fr.epsi.helper.VarsGlobals;
@@ -66,7 +67,7 @@ public class SplashScreen extends Activity {
         }
         	
         editor.commit();
-        
+
         // la valeur true chargerLaBase ,force l'insertion dans la base de donnees
         chargerLaBase = true;
         if (chargerLaBase)

@@ -43,6 +43,7 @@ public class RequestJson {
 		this.mProgress = 0;
 		callback = null;
 		mListIncident = new ArrayList<IncidentDB>();
+		mListIncidentHloc = new ArrayList<IncidentDB>();
 		load_state = NONE;
 	}
 
@@ -195,6 +196,7 @@ public class RequestJson {
 
 				try {
 					for(int i=0; i<response.length(); i++){
+						Log.e("REQUESTJSON","NOT WORK");
 						IncidentDB incident_item = new IncidentDB();
 						//recuperation donnees
 						int idIncident = Integer.valueOf(response.getJSONObject(i).getString("idIncident"));
@@ -207,7 +209,7 @@ public class RequestJson {
 						String userIncident = response.getJSONObject(i).getString("userIncident");
 
 						//insertion dans la db
-						mLocalDatabase.insertHloc("", dateIncident, titreIncident,
+						mLocalDatabase.insertHloc(" ", dateIncident, titreIncident,
 								lngIncident.toString(), latIncident.toString(), String.valueOf(idTypeIncident),
 								String.valueOf(descIncident), String.valueOf(userIncident));
 
