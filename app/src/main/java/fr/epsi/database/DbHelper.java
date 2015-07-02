@@ -310,7 +310,7 @@ public class DbHelper extends SQLiteOpenHelper{
 			iDB.setString(DbHelper.COLUMN_INCIDENT_DESCRIPTION,
 					String.valueOf(i.getDescriptionIncident()));
 			iDB.setString(DbHelper.COLUMN_INCIDENT_USER,
-					String.valueOf(i.getUser()));
+					String.valueOf(i.getUserIncident()));
 			incidentsDB.add(iDB);
 		}
 		return incidentsDB;

@@ -10,7 +10,7 @@ public class Incident {
 
     private String dateIncident;
 
-    private String user;
+    private String userIncident;
 
     private String titreIncident;
 
@@ -41,14 +41,14 @@ public class Incident {
         this.listeAvis=null;
         this.listeCommentaire=null;
         this.titreIncident=null;
-        this.user=null;
+        this.userIncident =null;
     }
 
-    public Incident(String user, String titre, TypeIncident typeIncident, String descriptionIncident,
+    public Incident(String userIncident, String titre, TypeIncident typeIncident, String descriptionIncident,
                     double latitude, double longitude, String d) {
         this.idIncident = null;
         this.dateIncident = d;
-        this.user = user;
+        this.userIncident = userIncident;
         this.titreIncident = titre;
         this.typeIncident = typeIncident;
         this.idTypeIncident = typeIncident.getId();
@@ -60,11 +60,11 @@ public class Incident {
         this.listeCommentaire = new ArrayList<Commentaire>();
     }
 
-    public Incident(int id, String user, String titre, int idTypeIncident, String descriptionIncident,
+    public Incident(int id, String userIncident, String titre, int idTypeIncident, String descriptionIncident,
                      String d) {
         this.idIncident = id;
         this.dateIncident = d;
-        this.user = user;
+        this.userIncident = userIncident;
         this.titreIncident = titre;
         this.idTypeIncident = idTypeIncident;
         this.descriptionIncident = descriptionIncident;
@@ -77,9 +77,9 @@ public class Incident {
     /**
      * Constructeur complet avec liste des mÃˆdias recopiÃˆe.
      */
-    public Incident(String user, String titre, TypeIncident typeIncident, String descriptionIncident,
+    public Incident(String userIncident, String titre, TypeIncident typeIncident, String descriptionIncident,
                     double latitude, double longitude, ArrayList<Media> listeMedia, String d) {
-        this(user, titre, typeIncident, descriptionIncident, latitude, longitude, d);
+        this(userIncident, titre, typeIncident, descriptionIncident, latitude, longitude, d);
         for(int i=0; i<listeMedia.size(); i++)
             this.listeMedia.add(listeMedia.get(i));
     }
@@ -87,7 +87,7 @@ public class Incident {
     public Incident(Incident incident) {
         this.idIncident = incident.idIncident;
         this.dateIncident = incident.dateIncident;
-        this.user = incident.user;
+        this.userIncident = incident.userIncident;
         this.titreIncident = incident.titreIncident;
         this.typeIncident = incident.typeIncident;
         this.descriptionIncident = incident.descriptionIncident;
@@ -112,12 +112,12 @@ public class Incident {
         this.idIncident =i;
     }
 
-    public String getUser() {
-        return this.user;
+    public String getUserIncident() {
+        return this.userIncident;
     }
 
-    public void setUser(String u){
-        this.user=u;
+    public void setUserIncident(String u){
+        this.userIncident =u;
     }
 
     public String getTitreIncident() {
