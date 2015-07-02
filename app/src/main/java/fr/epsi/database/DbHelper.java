@@ -9,7 +9,9 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 import java.util.ArrayList;
+import java.util.List;
 
+import classes.metier.Incident;
 import classes.metier.IncidentDB;
 
 public class DbHelper extends SQLiteOpenHelper{
@@ -21,7 +23,7 @@ public class DbHelper extends SQLiteOpenHelper{
 	//name of db
 	public static final String DATABASE_NAME = "DB_AI.db";
 	//version
-	public static int DATABASE_VERSION = 5;
+	public static int DATABASE_VERSION = 6;
 	// Database creation sql statement
 
 	// Columns Incident Table
@@ -31,6 +33,9 @@ public class DbHelper extends SQLiteOpenHelper{
 	public static final String COLUMN_INCIDENT_LONGITUDE = "incident_longitude";
 	public static final String COLUMN_INCIDENT_LATITUDE = "incident_latitude";
 	public static final String COLUMN_INCIDENT_TYPE_ID = "incident_type_id";
+	public static final String COLUMN_INCIDENT_DESCRIPTION = "incident_description";
+	public static final String COLUMN_INCIDENT_USER = "incident_user";
+
 
 	// Columns Historique Local Table
 	public static final String COLUMN_HLOC_ID = "hloc_id";
@@ -40,6 +45,8 @@ public class DbHelper extends SQLiteOpenHelper{
 	public static final String COLUMN_HLOC_LATITUDE = "hloc_latitude";
 	public static final String COLUMN_HLOC_LONGITUDE = "hloc_longitude";
 	public static final String COLUMN_HLOC_TYPE_ID = "hloc_type_id";
+	public static final String COLUMN_HLOC_DESCRIPTION = "hloc_description";
+	public static final String COLUMN_HLOC_USER = "hloc_user";
 
 
 
@@ -54,7 +61,8 @@ public class DbHelper extends SQLiteOpenHelper{
 				"CREATE TABLE Incident ("
 						+ "incident_id INTEGER PRIMARY KEY," + "incident_date TEXT,"
 						+ "incident_titre TEXT," + "incident_longitude TEXT,"
-						+ "incident_latitude TEXT," + " incident_type_id TEXT"
+						+ "incident_latitude TEXT," + " incident_type_id TEXT,"
+						+ "incident_description TEXT," + " incident_user TEXT"
 						+ " );"
 		);
 
@@ -62,7 +70,8 @@ public class DbHelper extends SQLiteOpenHelper{
 				"CREATE TABLE Hloc ("
 						+ "hloc_id INTEGER PRIMARY KEY," + "hloc_adresse TEXT," + "hloc_date TEXT,"
 						+ "hloc_titre TEXT," + "hloc_longitude TEXT,"
-						+ "hloc_latitude TEXT," + " hloc_type_id TEXT"
+						+ "hloc_latitude TEXT," + " hloc_type_id TEXT,"
+						+ "hloc_description TEXT," + " hloc_user TEXT"
 						+ " );"
 		);
 
@@ -82,10 +91,11 @@ public class DbHelper extends SQLiteOpenHelper{
 		onCreate(db);
 	}
 
-/**INCIDENT HELPERS*/
+	/**INCIDENT HELPERS*/
 	public boolean insertIncident (String incident_date, String incident_titre,
-									String incident_longitude,String incident_latitude,
-									String type_incident_id)
+								   String incident_longitude,String incident_latitude,
+								   String type_incident_id, String incident_description,
+								   String incident_user)
 	{
 		SQLiteDatabase db = this.getWritableDatabase();
 		ContentValues contentValues = new ContentValues();
@@ -94,6 +104,8 @@ public class DbHelper extends SQLiteOpenHelper{
 		contentValues.put("incident_longitude", incident_longitude);
 		contentValues.put("incident_latitude", incident_latitude);
 		contentValues.put("incident_type_id", type_incident_id);
+		contentValues.put("incident_description", incident_description);
+		contentValues.put("incident_user", incident_user);
 		db.insert("Incident", null, contentValues);
 		return true;
 	}
@@ -102,7 +114,7 @@ public class DbHelper extends SQLiteOpenHelper{
 		SQLiteDatabase db = this.getReadableDatabase();
 		Cursor cursor =  db.query(NOM_TABLE_INCIDENT, new String[] { COLUMN_INCIDENT_ID,
 						COLUMN_INCIDENT_DATE, COLUMN_INCIDENT_LATITUDE,COLUMN_INCIDENT_LONGITUDE,
-				COLUMN_INCIDENT_TITRE, COLUMN_INCIDENT_TYPE_ID}, COLUMN_INCIDENT_ID + "=?",
+						COLUMN_INCIDENT_TITRE, COLUMN_INCIDENT_TYPE_ID, COLUMN_INCIDENT_DESCRIPTION, COLUMN_INCIDENT_USER}, COLUMN_INCIDENT_ID + "=?",
 				new String[] { String.valueOf(id) }, null, null, null, null);
 
 		if (cursor != null)
@@ -115,6 +127,8 @@ public class DbHelper extends SQLiteOpenHelper{
 		mLocalIncident.setString("incident_longitude",cursor.getString(3));
 		mLocalIncident.setString("incident_titre",cursor.getString(4));
 		mLocalIncident.setString("incident_type_id",cursor.getString(5));
+		mLocalIncident.setString("incident_description",cursor.getString(6));
+		mLocalIncident.setString("incident_user",cursor.getString(7));
 
 		return mLocalIncident;
 	}
@@ -125,8 +139,9 @@ public class DbHelper extends SQLiteOpenHelper{
 		return numRows;
 	}
 	public boolean updateIncident (Integer incident_id, String incident_date,String incident_titre,
-								  String incident_longitude,String incident_latitude,
-								  String type_incident_id)
+								   String incident_longitude,String incident_latitude,
+								   String type_incident_id, String incident_description,
+								   String incident_user)
 	{
 		SQLiteDatabase db = this.getWritableDatabase();
 		ContentValues contentValues = new ContentValues();
@@ -135,6 +150,8 @@ public class DbHelper extends SQLiteOpenHelper{
 		contentValues.put("incident_longitude", incident_longitude);
 		contentValues.put("incident_latitude", incident_latitude);
 		contentValues.put("incident_type_id", type_incident_id);
+		contentValues.put("incident_description", incident_description);
+		contentValues.put("incident_user", incident_user);
 		db.update(NOM_TABLE_INCIDENT, contentValues, "id = ? ", new String[] { Integer.toString(incident_id) } );
 		return true;
 	}
@@ -161,6 +178,8 @@ public class DbHelper extends SQLiteOpenHelper{
 			String latIncident = res.getString(res.getColumnIndex(COLUMN_INCIDENT_LATITUDE));
 			String lngIncident = res.getString(res.getColumnIndex(COLUMN_INCIDENT_LONGITUDE));
 			String idTypeIncident = res.getString(res.getColumnIndex(COLUMN_INCIDENT_TYPE_ID));
+			String descIncident = res.getString(res.getColumnIndex(COLUMN_INCIDENT_DESCRIPTION));
+			String userIncident = res.getString(res.getColumnIndex(COLUMN_INCIDENT_USER));
 
 			incident_item.setString(DbHelper.COLUMN_INCIDENT_ID,
 					String.valueOf(idIncident));
@@ -174,6 +193,10 @@ public class DbHelper extends SQLiteOpenHelper{
 					String.valueOf(lngIncident));
 			incident_item.setString(DbHelper.COLUMN_INCIDENT_TYPE_ID,
 					String.valueOf(idTypeIncident));
+			incident_item.setString(DbHelper.COLUMN_INCIDENT_DESCRIPTION,
+					String.valueOf(descIncident));
+			incident_item.setString(DbHelper.COLUMN_INCIDENT_USER,
+					String.valueOf(userIncident));
 
 			array_list.add(incident_item);
 			res.moveToNext();
@@ -182,7 +205,7 @@ public class DbHelper extends SQLiteOpenHelper{
 	}
 /** EOF INCIDENT HELPERS*/
 
-/** HLOC HELPERS*/
+	/** HLOC HELPERS*/
 	/*
 	insertHloc(...){}
 	updateHloc(...){}
@@ -197,7 +220,9 @@ public class DbHelper extends SQLiteOpenHelper{
 							   String hloc_titre,
 							   String hloc_longitude,
 							   String hloc_latitude,
-							   String hloc_type_id)
+							   String hloc_type_id,
+							   String hloc_description,
+							   String hloc_user)
 	{
 		SQLiteDatabase db = this.getWritableDatabase();
 		ContentValues contentValues = new ContentValues();
@@ -207,6 +232,8 @@ public class DbHelper extends SQLiteOpenHelper{
 		contentValues.put("hloc_longitude", hloc_longitude);
 		contentValues.put("hloc_latitude", hloc_latitude);
 		contentValues.put("hloc_type_id", hloc_type_id);
+		contentValues.put("hloc_description", hloc_description);
+		contentValues.put("hloc_user", hloc_user);
 		db.insert("Hloc", null, contentValues);
 		Log.v("===DBHELPER","INSERT HLOC");
 		return true;
@@ -218,7 +245,10 @@ public class DbHelper extends SQLiteOpenHelper{
 							   String hloc_titre,
 							   String hloc_longitude,
 							   String hloc_latitude,
-							   String hloc_type_id)
+							   String hloc_type_id,
+							   String hloc_description,
+							   String hloc_user
+	)
 	{
 		SQLiteDatabase db = this.getWritableDatabase();
 		ContentValues contentValues = new ContentValues();
@@ -228,6 +258,8 @@ public class DbHelper extends SQLiteOpenHelper{
 		contentValues.put("hloc_longitude", hloc_longitude);
 		contentValues.put("hloc_latitude", hloc_latitude);
 		contentValues.put("hloc_type_id", hloc_type_id);
+		contentValues.put("hloc_description", hloc_description);
+		contentValues.put("hloc_user", hloc_user);
 		db.update(NOM_TABLE_HLOC, contentValues, "id = ? ", new String[]{Integer.toString(hloc_id)});
 		return true;
 	}
@@ -236,7 +268,8 @@ public class DbHelper extends SQLiteOpenHelper{
 		SQLiteDatabase db = this.getReadableDatabase();
 		Cursor cursor =  db.query(NOM_TABLE_HLOC, new String[]{COLUMN_HLOC_ID, COLUMN_HLOC_ADRESSE,
 						COLUMN_HLOC_DATE, COLUMN_HLOC_LATITUDE, COLUMN_HLOC_LONGITUDE,
-						COLUMN_HLOC_TITRE, COLUMN_HLOC_TYPE_ID}, COLUMN_HLOC_ID + "=?",
+						COLUMN_HLOC_TITRE, COLUMN_HLOC_TYPE_ID, COLUMN_HLOC_DESCRIPTION, COLUMN_HLOC_USER},
+				COLUMN_HLOC_ID + "=?",
 				new String[]{String.valueOf(id)}, null, null, null, null);
 
 		if (cursor != null)
@@ -250,11 +283,38 @@ public class DbHelper extends SQLiteOpenHelper{
 		mLocalIncident.setString("hloc_longitude", cursor.getString(4));
 		mLocalIncident.setString("hloc_titre", cursor.getString(5));
 		mLocalIncident.setString("hloc_type_id", cursor.getString(6));
+		mLocalIncident.setString("hloc_description", cursor.getString(7));
+		mLocalIncident.setString("hloc_user", cursor.getString(8));
 
 		return mLocalIncident;
 	}
 
-/** EOF HLOC HELPERS*/
+	/** EOF HLOC HELPERS*/
+
+	public static List<IncidentDB> incidentsToIncidentsDB(List <Incident> incidents){
+		List<IncidentDB> incidentsDB = new ArrayList<>();
+		for(Incident i : incidents){
+			IncidentDB iDB = new IncidentDB();
+			iDB.setString(DbHelper.COLUMN_INCIDENT_ID,
+					String.valueOf(i.getIdIncident()));
+			iDB.setString(DbHelper.COLUMN_INCIDENT_TITRE,
+					String.valueOf(i.getTitreIncident()));
+			iDB.setString(DbHelper.COLUMN_INCIDENT_DATE,
+					String.valueOf(i.getDateIncident()));
+			iDB.setString(DbHelper.COLUMN_INCIDENT_LATITUDE,
+					String.valueOf(i.getLatitude()));
+			iDB.setString(DbHelper.COLUMN_INCIDENT_LONGITUDE,
+					String.valueOf(i.getLongitude()));
+			iDB.setString(DbHelper.COLUMN_INCIDENT_TYPE_ID,
+					String.valueOf(i.getTypeIncident().getId()));
+			iDB.setString(DbHelper.COLUMN_INCIDENT_DESCRIPTION,
+					String.valueOf(i.getDescriptionIncident()));
+			iDB.setString(DbHelper.COLUMN_INCIDENT_USER,
+					String.valueOf(i.getUser()));
+			incidentsDB.add(iDB);
+		}
+		return incidentsDB;
+	}
 
 
 
