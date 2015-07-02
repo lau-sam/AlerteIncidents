@@ -26,7 +26,9 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import classes.metier.Incident;
@@ -93,8 +95,11 @@ public class IncidentActivity extends Activity {
 
                         Location mLastLocation = mFusedLocation.getLocation();
 
+                        SimpleDateFormat fmt = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                        Date now = new Date();
+
                         Incident i = new Incident(Build.SERIAL, titreIncident.getText().toString(), (TypeIncident) typeIncidentSpinner.getSelectedItem(), descIncident.getText().toString(),
-                                mLastLocation.getLatitude(), mLastLocation.getLongitude(), java.text.DateFormat.getDateTimeInstance().format(Calendar.getInstance().getTime()));
+                                mLastLocation.getLatitude(), mLastLocation.getLongitude(), fmt.format(now).toString());
 
                         RestAdapter restAdapter = new RestAdapter.Builder()
                                 .setEndpoint(MainActivity.API_URL)

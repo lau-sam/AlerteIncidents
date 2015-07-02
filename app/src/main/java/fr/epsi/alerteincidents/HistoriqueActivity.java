@@ -20,8 +20,10 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 
 import classes.metier.Incident;
 import classes.metier.IncidentDB;
@@ -189,8 +191,13 @@ public class HistoriqueActivity extends Activity {
 
                 Log.e("HistoriqueActivity.java/onButtonClick() : PUT a realiser",String.valueOf(incident_text_titre.getText()));
 
-                Incident i = new Incident(Integer.parseInt(incident_text_id.getText().toString()), Build.SERIAL, incident_text_titre.getText().toString(), Integer.parseInt(incident_text_type.getText().toString()), null,
-                        java.text.DateFormat.getDateTimeInstance().format(Calendar.getInstance().getTime()));
+                SimpleDateFormat fmt = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                Date now = new Date();
+
+                Incident i = new Incident(Integer.parseInt(incident_text_id.getText().toString()),
+                        Build.SERIAL, incident_text_titre.getText().toString(),
+                        Integer.parseInt(incident_text_type.getText().toString()), "",
+                        fmt.format(now).toString());
 
                 RestAdapter restAdapter = new RestAdapter.Builder()
                         .setEndpoint(MainActivity.API_URL)
@@ -202,7 +209,7 @@ public class HistoriqueActivity extends Activity {
                             }
                         }).build();
                 RestApi methods = restAdapter.create(RestApi.class);
-                methods.updateIncident(i, new Callback<Incident>() {
+                methods.updateIncident(i.getIdIncident(), i, new Callback<Incident>() {
                     @Override
                     public void success(Incident incident, retrofit.client.Response response) {
                         /* update bd locale */

@@ -38,9 +38,9 @@ public interface RestApi {
 
     // Activité Historique
 
-    @GET("/incidents/parEMEI/{user}")
+    @GET("/incidents/parIMEI/{user}")
     public List<Incident> getIncidentsByUser(@Path("user") String imei);
 
-    @PUT("/incident")
-    public void updateIncident(@Body Incident i, Callback<Incident> cb);
+    @PUT("/incident/{id}")
+    public void updateIncident(@Path("id") int idIncident, @Body Incident i, Callback<Incident> cb);
 }

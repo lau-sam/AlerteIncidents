@@ -309,7 +309,7 @@ public class CarteActivity extends Activity {
 						String hloc_type_id = "1"; //type id de test, a recuperer
 
 						mLocalDatabase.insertHloc(userAdress,date.toString(),hloc_titre,
-								hloc_longitude, hloc_latitude, hloc_type_id);
+								hloc_longitude, hloc_latitude, hloc_type_id,"","");
 
 						//Log.v("===CARTE", "Begin");
 						//IncidentDB mLocalIncident = mLocalDatabase.getHloc(1);
