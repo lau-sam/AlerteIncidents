@@ -40,11 +40,11 @@ public class Webservice {
 		return this.url;
 	}
 	
-	//param : imei de l'auteur
+	//param : imei de l'auteur /incidents/parIMEI/[var imei]
 	public String getIncidentsByImei(int imei){
-		this.url += SERVER_ADRESS + "/imei/";
+		this.url += SERVER_ADRESS + "/incidents/";
+		this.url += "parIMEI/";
 		this.url += imei;
-		this.url += "/incidents";
 		return this.url;
 	}
 	
@@ -63,7 +63,7 @@ public class Webservice {
 		return this.url;
 	}
 	
-	//param : id du type du mÈdia
+	//param : id du type du media
 	public String getMediasByType(int typeId){
 		this.url += SERVER_ADRESS + "/media/";
 		this.url += "type/";
