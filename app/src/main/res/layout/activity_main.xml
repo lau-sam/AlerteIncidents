@@ -3,7 +3,7 @@
     android:id="@+id/fragment_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fond_home2">
+    android:background="@drawable/fond_home3">
 
     <!-- Home wallpaper
     <ImageView
@@ -12,47 +12,52 @@
         android:layout_height="match_parent"
         android:src="@drawable/fond_home"/>
         -->
-    
-	<!-- Layout content home buttons -->
+
+    <!-- Layout content home buttons -->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true">
+        android:layout_alignParentLeft="true"
+        android:layout_gravity="center">
 
         <ImageButton
             android:id="@+id/imageBtnMap"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/carte"
-            android:layout_above="@+id/imageBtnHisto"
-            android:layout_alignParentLeft="true"
+            android:src="@drawable/btn_map"
             android:onClick="newMap"
-            />
+            android:layout_above="@+id/imageBtnIncident"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="24dp"
+            android:layout_marginEnd="24dp" />
 
         <ImageButton
             android:id="@+id/imageBtnIncident"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/alerter"
-            android:layout_above="@+id/imageBtnPreference"
+            android:src="@drawable/btn_incident"
+            android:onClick="newIncident"
+            android:layout_above="@+id/imageBtnHisto"
             android:layout_alignParentRight="true"
-            android:onClick="newIncident"/>
+            android:layout_alignParentEnd="true" />
 
         <ImageButton
             android:id="@+id/imageBtnHisto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/historique"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentLeft="true"
-            android:onClick="newHistorique"/>
+            android:src="@drawable/btn_histo"
+            android:onClick="newHistorique"
+            android:layout_above="@+id/imageBtnPreference"
+            android:layout_alignLeft="@+id/imageBtnMap"
+            android:layout_alignStart="@+id/imageBtnMap" />
 
         <ImageButton
             android:id="@+id/imageBtnPreference"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/option"
+            android:src="@drawable/btn_preference"
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
             android:onClick="newPreference"/>

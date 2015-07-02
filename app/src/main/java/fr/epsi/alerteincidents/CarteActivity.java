@@ -99,7 +99,7 @@ public class CarteActivity extends Activity {
 			//}
 
 			//MONTPEL
-			map.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(43.6,3.8833),11));
+			map.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(43.642934, 3.838436),13));
 			//map.moveCamera(CameraUpdateFactory.newLatLngZoom(FRANCE, 8));
 		}
 

@@ -6,6 +6,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 
 import android.content.Context;
+import android.os.Build;
 import android.os.Handler;
 import android.util.Log;
 
@@ -21,12 +22,14 @@ import fr.epsi.database.DbHelper;
 public class RequestJson {
 	private DbHelper mLocalDatabase;
 	private ArrayList<IncidentDB> mListIncident;
+	private ArrayList<IncidentDB> mListIncidentHloc;
 	private int mProgress;
 	private mCallback callback;
 
 	private static int NONE = 0;
 	private static int INCIDENT = 1;
-	private static int FINISH = 2;
+	private static int HLOCINCIDENT = 2;
+	private static int FINISH = 3;
 
 	private int load_state;
 
@@ -71,13 +74,18 @@ public class RequestJson {
 			load_state = INCIDENT;
 			loadData(null);
 		}
-		else if (mProgress == 0 && load_state == INCIDENT)
+		else if (mProgress == 50 && load_state == INCIDENT)
 		{
+			mListIncidentHloc = getIncidentsByIMEI();
+			load_state = HLOCINCIDENT;
+			loadData(null);
+		}
+		else if (mProgress == 100 && load_state == HLOCINCIDENT)
+		{
+			Log.e("RequestJson.java", "End load Hloc");
 			load_state = FINISH;
-			Log.v("End Load Incident","load_state " +load_state);
-			//data_source.close();
+			Log.v("End Load Incident", "load_state " + load_state);
 			callback.onFinish();
-			mProgress = 100;
 			return;
 		}
 		if (mProgress != 100)
@@ -98,17 +106,17 @@ public class RequestJson {
 		//France
 		LatLng latlng = new LatLng(47, 2);
 		int rayon = 300;
-		Log.v("RequestJson","getIncidentsByLatLng");
 		Webservice mWbs = new Webservice();
 		mWbs.getIncidentByLatLng(latlng, rayon);
 
-		Log.v("Url Done", mWbs.getUrl());
+		Log.e("Url Done getIncidentsByLatLng", mWbs.getUrl());
 
 		JsonArrayRequest strReq = new JsonArrayRequest(mWbs.getUrl(),new Response.Listener<JSONArray>(){
 			//(Method.GET, mWbs.getUrl(), new Response.Listener<JSONArray>() {
 
 			@Override
 			public void onResponse(JSONArray response) {
+				Log.e("RequestJson.java getIncidentsByLatLng ",response.toString());
 				try {
 					for(int i=0; i<response.length(); i++){
 						IncidentDB incident_item = new IncidentDB();
@@ -147,7 +155,7 @@ public class RequestJson {
 
 						mListIncident.add(incident_item);
 					}
-					updateProgress(mProgress+100);
+					updateProgress(mProgress+50);
 				} catch (JSONException e) {
 					Log.d("Incident", "FATAL ERROR");
 					e.printStackTrace();
@@ -169,20 +177,22 @@ public class RequestJson {
 
 
 	public ArrayList<IncidentDB> getIncidentsByIMEI(){
-		//France
-		LatLng latlng = new LatLng(47, 2);
-		int rayon = 300;
-		Log.v("RequestJson", "getIncidentsByLatLng");
 		Webservice mWbs = new Webservice();
-		mWbs.getIncidentByLatLng(latlng, rayon);
+		//pour avoir le vrai
+		//String mIMEI = Build.SERIAL;
 
-		Log.v("Url Done", mWbs.getUrl());
+		//IMEI de test
+		String mIMEI = "47900aacc7eed000";
+
+		mWbs.getIncidentsByImei(mIMEI);
+
+		Log.v("Url Done getIncidentsByIMEI", mWbs.getUrl());
 
 		JsonArrayRequest strReq = new JsonArrayRequest(mWbs.getUrl(),new Response.Listener<JSONArray>(){
-			//(Method.GET, mWbs.getUrl(), new Response.Listener<JSONArray>() {
 
 			@Override
 			public void onResponse(JSONArray response) {
+
 				try {
 					for(int i=0; i<response.length(); i++){
 						IncidentDB incident_item = new IncidentDB();
@@ -196,32 +206,31 @@ public class RequestJson {
 						String descIncident = response.getJSONObject(i).getString("descriptionIncident");
 						String userIncident = response.getJSONObject(i).getString("userIncident");
 
-
 						//insertion dans la db
-						mLocalDatabase.insertIncident(dateIncident,titreIncident,
-								lngIncident.toString(),latIncident.toString(),String.valueOf(idTypeIncident),
+						mLocalDatabase.insertHloc("", dateIncident, titreIncident,
+								lngIncident.toString(), latIncident.toString(), String.valueOf(idTypeIncident),
 								String.valueOf(descIncident), String.valueOf(userIncident));
 
-						incident_item.setString(DbHelper.COLUMN_INCIDENT_ID,
+						incident_item.setString(DbHelper.COLUMN_HLOC_ID,
 								String.valueOf(idIncident));
-						incident_item.setString(DbHelper.COLUMN_INCIDENT_TITRE,
+						incident_item.setString(DbHelper.COLUMN_HLOC_TITRE,
 								String.valueOf(titreIncident));
-						incident_item.setString(DbHelper.COLUMN_INCIDENT_DATE,
+						incident_item.setString(DbHelper.COLUMN_HLOC_DATE,
 								String.valueOf(dateIncident));
-						incident_item.setString(DbHelper.COLUMN_INCIDENT_LATITUDE,
+						incident_item.setString(DbHelper.COLUMN_HLOC_LATITUDE,
 								String.valueOf(latIncident));
-						incident_item.setString(DbHelper.COLUMN_INCIDENT_LONGITUDE,
+						incident_item.setString(DbHelper.COLUMN_HLOC_LONGITUDE,
 								String.valueOf(lngIncident));
-						incident_item.setString(DbHelper.COLUMN_INCIDENT_TYPE_ID,
+						incident_item.setString(DbHelper.COLUMN_HLOC_TYPE_ID,
 								String.valueOf(idTypeIncident));
-						incident_item.setString(DbHelper.COLUMN_INCIDENT_DESCRIPTION,
+						incident_item.setString(DbHelper.COLUMN_HLOC_DESCRIPTION,
 								String.valueOf(descIncident));
-						incident_item.setString(DbHelper.COLUMN_INCIDENT_USER,
+						incident_item.setString(DbHelper.COLUMN_HLOC_USER,
 								String.valueOf(userIncident));
 
-						mListIncident.add(incident_item);
+						mListIncidentHloc.add(incident_item);
 					}
-					updateProgress(mProgress+100);
+					updateProgress(mProgress+50);
 				} catch (JSONException e) {
 					Log.d("Incident", "FATAL ERROR");
 					e.printStackTrace();
@@ -238,7 +247,7 @@ public class RequestJson {
 		});
 
 		AppController.getInstance().addToRequestQueue(strReq);
-		return mListIncident;
+		return mListIncidentHloc;
 	}
 
 	private final void updateProgress(int progress)

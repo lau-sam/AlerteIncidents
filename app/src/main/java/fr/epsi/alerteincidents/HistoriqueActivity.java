@@ -70,7 +70,7 @@ public class HistoriqueActivity extends Activity {
 		//recuperation de la liste des incidents locaux
 		DbHelper mLocalDatabase = new DbHelper(this);
 		ArrayList<IncidentDB> list_Incident = mLocalDatabase.getAllIncidents();
-		ArrayList<IncidentDB> myDataset = new ArrayList<>();
+		ArrayList<IncidentDB> myDataset = new ArrayList<IncidentDB>();
 
 		for (int i=0;i<list_Incident.size();i++){
 			IncidentDB item = list_Incident.get(i);
