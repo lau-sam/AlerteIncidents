@@ -20,24 +20,40 @@
         android:layout_width="fill_parent"
         android:layout_height="26dip"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
         android:layout_toRightOf="@id/historiqueIcon"
         android:ellipsize="marquee"
         android:singleLine="true"
         android:text="Date de l'ajout"
-        android:textSize="12sp" />
+        android:textSize="12sp"
+        android:layout_toLeftOf="@+id/button_supprimer"
+        android:layout_toStartOf="@+id/button_supprimer" />
 
     <TextView
         android:id="@+id/historiqueTitreList"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_above="@id/historiqueDateList"
-        android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
         android:layout_alignWithParentIfMissing="true"
         android:layout_toRightOf="@id/historiqueIcon"
         android:gravity="center_vertical"
         android:text="Titre de l'incident"
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        android:layout_toLeftOf="@+id/button_supprimer"
+        android:layout_toStartOf="@+id/button_supprimer" />
+
+
+    <ImageView
+        android:id="@+id/button_supprimer"
+        android:layout_width="60dip"
+        android:layout_height="60dip"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="5dip"
+        android:text="Supprimer"
+        android:src="@drawable/bouton_supprimer"
+        android:clickable="true"
+        android:onClick="onButtonClick" />
 
 </RelativeLayout>
