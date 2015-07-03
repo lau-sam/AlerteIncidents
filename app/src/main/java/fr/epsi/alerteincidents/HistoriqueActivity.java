@@ -232,8 +232,11 @@ public class HistoriqueActivity extends Activity {
                         Toast.makeText(HistoriqueActivity.this, "Erreur, vérifiez votre connexion internet", Toast.LENGTH_SHORT).show();
                     }
                 });
+				break;
 
-                break;
+			case R.id.button_supprimer:
+				Log.e("HistoriqueActivity.java/onButtonClick","Gestion bouton supprimer");
+				break;
 		}
 	}
 
@@ -249,4 +252,6 @@ public class HistoriqueActivity extends Activity {
 						})
 				.show();
 	}
+
+
 }
