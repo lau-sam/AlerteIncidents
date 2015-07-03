@@ -50,7 +50,7 @@ public class Incident {
         this.userIncident = userIncident;
         this.titreIncident = titre;
         this.typeIncident = typeIncident;
-        this.idTypeIncident = typeIncident.getId();
+        this.setIdTypeIncident(typeIncident.getId());
         this.descriptionIncident = descriptionIncident;
         this.latitude = latitude;
         this.longitude = longitude;
@@ -65,7 +65,7 @@ public class Incident {
         this.dateIncident = d;
         this.userIncident = userIncident;
         this.titreIncident = titre;
-        this.idTypeIncident = idTypeIncident;
+        this.setIdTypeIncident(idTypeIncident);
         this.descriptionIncident = descriptionIncident;
         this.latitude = latitude;
         this.longitude = longitude;
@@ -206,5 +206,13 @@ public class Incident {
 
     public void deleteCommentaire(Commentaire c) {
         this.listeCommentaire.remove(c);
+    }
+
+    public int getIdTypeIncident() {
+        return idTypeIncident;
+    }
+
+    public void setIdTypeIncident(int idTypeIncident) {
+        this.idTypeIncident = idTypeIncident;
     }
 }

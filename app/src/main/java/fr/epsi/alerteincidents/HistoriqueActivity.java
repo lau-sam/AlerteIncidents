@@ -69,7 +69,7 @@ public class HistoriqueActivity extends Activity {
 
 		//recuperation de la liste des incidents locaux
 		DbHelper mLocalDatabase = new DbHelper(this);
-		ArrayList<IncidentDB> list_Incident = mLocalDatabase.getAllIncidents();
+		ArrayList<IncidentDB> list_Incident = mLocalDatabase.getAllHloc();
 		ArrayList<IncidentDB> myDataset = new ArrayList<IncidentDB>();
 
 		for (int i=0;i<list_Incident.size();i++){
@@ -194,7 +194,7 @@ public class HistoriqueActivity extends Activity {
                 SimpleDateFormat fmt = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                 Date now = new Date();
 
-                Incident i = new Incident(Integer.parseInt(incident_text_id.getText().toString()),
+                final Incident i = new Incident(Integer.parseInt(incident_text_id.getText().toString()),
                         Build.SERIAL, incident_text_titre.getText().toString(),
                         Integer.parseInt(incident_text_type.getText().toString()), "",
                         fmt.format(now).toString());
@@ -213,8 +213,18 @@ public class HistoriqueActivity extends Activity {
                     @Override
                     public void success(Incident incident, retrofit.client.Response response) {
                         /* update bd locale */
+                        DbHelper dbHelper = new DbHelper(HistoriqueActivity.this);
+                        dbHelper.updateHloc(i.getIdIncident(), i.getDateIncident(),
+                                i.getTitreIncident(),String.valueOf(i.getIdTypeIncident()),
+                                i.getDescriptionIncident());
+                        dbHelper.updateIncident(i.getIdIncident(), i.getDateIncident(),
+                                i.getTitreIncident(),String.valueOf(i.getIdTypeIncident()),
+                                i.getDescriptionIncident());
 
                         Toast.makeText(HistoriqueActivity.this, "L'incident a bien été modifié", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(HistoriqueActivity.this, HistoriqueActivity.class);
+                        startActivity(intent);
+                        HistoriqueActivity.this.finish();
                     }
 
                     @Override

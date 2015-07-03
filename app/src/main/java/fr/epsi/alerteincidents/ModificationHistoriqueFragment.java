@@ -46,12 +46,12 @@ public class ModificationHistoriqueFragment extends Fragment {
         EditText incident_text_type_incident = (EditText) rootView.findViewById(R.id.histo_incident_text_type_incident);
 
         DbHelper mLocalDatabase = new DbHelper(getActivity().getApplication());
-        IncidentDB mLocalIncident = mLocalDatabase.getIncidentData(Integer.valueOf(incident_id));
+        IncidentDB mLocalIncident = mLocalDatabase.getHloc(Integer.valueOf(incident_id));
 
-        incident_text_id.setText(mLocalIncident.getString("incident_id"));
-        incident_text_titre.setText(mLocalIncident.getString("incident_titre"));
-        incident_text_date.setText(mLocalIncident.getString("incident_date"));
-        incident_text_type_incident.setText(mLocalIncident.getString("incident_type_id"));
+        incident_text_id.setText(mLocalIncident.getString(DbHelper.COLUMN_HLOC_ID));
+        incident_text_titre.setText(mLocalIncident.getString(DbHelper.COLUMN_HLOC_TITRE));
+        incident_text_date.setText(mLocalIncident.getString(DbHelper.COLUMN_HLOC_DATE));
+        incident_text_type_incident.setText(mLocalIncident.getString(DbHelper.COLUMN_HLOC_TYPE_ID));
 
 
     }

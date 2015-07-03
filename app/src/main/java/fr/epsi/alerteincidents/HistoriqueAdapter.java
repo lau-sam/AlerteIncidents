@@ -3,6 +3,7 @@ package fr.epsi.alerteincidents;
 /**
  * Created by Sam Lau on 30/06/2015.
  */
+
 import java.util.ArrayList;
 
 import android.app.Activity;
@@ -35,14 +36,16 @@ public class HistoriqueAdapter extends RecyclerView.Adapter<HistoriqueAdapter.Vi
     private boolean backClicked;
 
     private Fragment fragment;
+
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
     // you provide access to all the views for a data item in a view holder
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    public class ViewHolder extends RecyclerView.ViewHolder {
         // each data item is just a string in this case
         public ImageView typeIncidentImg;
         public TextView txtTitre;
         public TextView txtDate;
+
         public ViewHolder(View v) {
             super(v);
             //v.findViewById(R.id.historiqueTitreList).setOnClickListener(this);
@@ -71,7 +74,7 @@ public class HistoriqueAdapter extends RecyclerView.Adapter<HistoriqueAdapter.Vi
     // Create new views (invoked by the layout manager)
     @Override
     public HistoriqueAdapter.ViewHolder onCreateViewHolder(final ViewGroup parent,
-                                                   int viewType) {
+                                                           int viewType) {
         // create a new view
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_historique_item_adapter, parent, false);
 
@@ -92,7 +95,7 @@ public class HistoriqueAdapter extends RecyclerView.Adapter<HistoriqueAdapter.Vi
             IncidentDB mLocalIncident = mDataset.get(itemPosition);
 
             Bundle args = new Bundle();
-            args.putString("incident_id", mLocalIncident.getString(DbHelper.COLUMN_INCIDENT_ID));
+            args.putString("incident_id", mLocalIncident.getString(DbHelper.COLUMN_HLOC_ID));
             fragment = new ModificationHistoriqueFragment();
             fragment.setArguments(args);
             FragmentManager fm = ((Activity) v.getContext()).getFragmentManager();
@@ -102,7 +105,7 @@ public class HistoriqueAdapter extends RecyclerView.Adapter<HistoriqueAdapter.Vi
             ft.commit();
 
             FrameLayout mFrameLayout = (FrameLayout) ((Activity) v.getContext()).findViewById(R.id.frame_modificationHistorique);//findViewById(R.layout.fragment_modification_historique);
-            if(!mFrameLayout.isActivated()){
+            if (!mFrameLayout.isActivated()) {
                 mFrameLayout.setVisibility(View.VISIBLE);
             }
 
@@ -144,18 +147,23 @@ public class HistoriqueAdapter extends RecyclerView.Adapter<HistoriqueAdapter.Vi
         // - replace the contents of the view with that element
         final IncidentDB mLocalIncident = mDataset.get(position);
 
-        holder.txtTitre.setText("Titre : " + mLocalIncident.getString(DbHelper.COLUMN_INCIDENT_TITRE));
-        holder.txtDate.setText("Date : " + mLocalIncident.getString(DbHelper.COLUMN_INCIDENT_DATE));
+        holder.txtTitre.setText("Titre : " + mLocalIncident.getString(DbHelper.COLUMN_HLOC_TITRE));
+        holder.txtDate.setText("Date : " + mLocalIncident.getString(DbHelper.COLUMN_HLOC_DATE));
 
-        if(mLocalIncident.getString(DbHelper.COLUMN_INCIDENT_TYPE_ID).equals("1"))
-        {
+        if (mLocalIncident.getString(DbHelper.COLUMN_HLOC_TYPE_ID).equals("1")) {
             holder.typeIncidentImg.setImageResource(R.drawable.inondation);
-        }
-        else {
-            if (mLocalIncident.getString(DbHelper.COLUMN_INCIDENT_TYPE_ID).equals("2"))
+        } else {
+            if (mLocalIncident.getString(DbHelper.COLUMN_HLOC_TYPE_ID).equals("2"))
                 holder.typeIncidentImg.setImageResource(R.drawable.incendie);
+            else {
+                holder.typeIncidentImg.setImageResource(R.drawable.incendie);
+            }
         }
+
+
     }
+
+
 
     // Return the size of your dataset (invoked by the layout manager)
     @Override

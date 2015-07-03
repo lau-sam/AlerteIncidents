@@ -33,6 +33,7 @@ import java.util.List;
 
 import classes.metier.Incident;
 import classes.metier.TypeIncident;
+import fr.epsi.database.DbHelper;
 import fr.epsi.helper.FusedLocationService;
 import fr.epsi.helper.RestApi;
 import retrofit.Callback;
@@ -98,7 +99,7 @@ public class IncidentActivity extends Activity {
                         SimpleDateFormat fmt = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                         Date now = new Date();
 
-                        Incident i = new Incident(Build.SERIAL, titreIncident.getText().toString(), (TypeIncident) typeIncidentSpinner.getSelectedItem(), descIncident.getText().toString(),
+                        final Incident i = new Incident(Build.SERIAL, titreIncident.getText().toString(), (TypeIncident) typeIncidentSpinner.getSelectedItem(), descIncident.getText().toString(),
                                 mLastLocation.getLatitude(), mLastLocation.getLongitude(), fmt.format(now).toString());
 
                         RestAdapter restAdapter = new RestAdapter.Builder()
@@ -114,6 +115,15 @@ public class IncidentActivity extends Activity {
                         methods.createIncident(i, new Callback<Incident>() {
                             @Override
                             public void success(Incident incident, retrofit.client.Response response) {
+                                DbHelper dbHelper = new DbHelper(IncidentActivity.this);
+
+                                dbHelper.insertHloc("", String.valueOf(response.getBody().toString()), i.getDateIncident(),
+                                        i.getTitreIncident(),String.valueOf(i.getLongitude()),
+                                        String.valueOf(i.getLatitude()), String.valueOf(i.getIdTypeIncident()),i.getDescriptionIncident(), Build.SERIAL);
+                                dbHelper.insertIncident(String.valueOf(i.getIdIncident()), i.getDateIncident(),
+                                        i.getTitreIncident(),String.valueOf(i.getLongitude()),
+                                        String.valueOf(i.getLatitude()), String.valueOf(i.getIdTypeIncident()),i.getDescriptionIncident(), Build.SERIAL);
+
                                 Toast.makeText(IncidentActivity.this, "Success", Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(IncidentActivity.this, HistoriqueActivity.class);
                                 startActivity(intent);
