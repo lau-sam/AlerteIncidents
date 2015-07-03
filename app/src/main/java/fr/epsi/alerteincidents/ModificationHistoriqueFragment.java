@@ -10,8 +10,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import classes.metier.IncidentDB;
@@ -33,6 +35,9 @@ public class ModificationHistoriqueFragment extends Fragment {
         //gestion bouttons dans la modification fragment
         Button mButtonAnnuler = (Button) rootView.findViewById(R.id.annuler_button);
         Button mButtonEnregistrer = (Button) rootView.findViewById(R.id.bouton_enregistrer);
+
+        final Spinner typeIncidentSpinner = (Spinner) rootView.findViewById(R.id.historiqueSpinner);
+        final ArrayAdapter typeIncidentAdapter = new ArrayAdapter(rootView.getContext(),android.R.layout.simple_spinner_item);
 
         Log.e("HistoriqueAdapter.java", "return rootView");
         return rootView;

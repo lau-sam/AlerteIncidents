@@ -6,6 +6,7 @@ import classes.metier.Incident;
 import classes.metier.TypeIncident;
 import retrofit.Callback;
 import retrofit.http.Body;
+import retrofit.http.DELETE;
 import retrofit.http.Field;
 import retrofit.http.FormUrlEncoded;
 import retrofit.http.GET;
@@ -43,4 +44,8 @@ public interface RestApi {
 
     @PUT("/incident/{id}")
     public void updateIncident(@Path("id") int idIncident, @Body Incident i, Callback<Incident> cb);
+
+    @DELETE("/incident/{id}")
+    public void deleteIncident(@Path("id") int idIncident, Callback<Incident> cb);
+
 }
