@@ -59,6 +59,14 @@ public class DbHelper extends SQLiteOpenHelper{
 
 	@Override
 	public void onCreate(SQLiteDatabase database) {
+       /*db.execSQL(
+                "DROP TABLE IF EXISTS " + NOM_TABLE_INCIDENT + ";"
+        );
+
+        db.execSQL(
+                "DROP TABLE IF EXISTS " + NOM_TABLE_HLOC + ";"
+        );
+
 		database.execSQL(
 				"CREATE TABLE Incident ("
 						+ "incident_id INTEGER PRIMARY KEY," + "incident_date TEXT,"
@@ -77,19 +85,12 @@ public class DbHelper extends SQLiteOpenHelper{
 						+ " );"
 		);
 
-
+*/
 	}
 
 	//upgrade db
 	@Override
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-		db.execSQL(
-				"DROP TABLE IF EXISTS " + NOM_TABLE_INCIDENT + ";"
-		);
-
-		db.execSQL(
-				"DROP TABLE IF EXISTS " + NOM_TABLE_HLOC + ";"
-		);
 		onCreate(db);
 	}
 
@@ -189,8 +190,14 @@ public class DbHelper extends SQLiteOpenHelper{
 	public Integer deleteIncident (Integer incident_id)
 	{
 		SQLiteDatabase db = this.getWritableDatabase();
-		return db.delete(NOM_TABLE_INCIDENT,"id = ? ",new String[] { Integer.toString(incident_id) });
+		return db.delete(NOM_TABLE_INCIDENT,"incident_id = ? ",new String[] { Integer.toString(incident_id) });
 	}
+
+    public Integer deleteHloc (Integer incident_id)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        return db.delete(NOM_TABLE_HLOC,"hloc_id = ? ",new String[] { Integer.toString(incident_id) });
+    }
 
 	public ArrayList<IncidentDB> getAllIncidents()
 	{

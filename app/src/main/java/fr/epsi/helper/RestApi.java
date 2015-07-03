@@ -46,6 +46,6 @@ public interface RestApi {
     public void updateIncident(@Path("id") int idIncident, @Body Incident i, Callback<Incident> cb);
 
     @DELETE("/incident/{id}")
-    public void deleteIncident(@Path("id") int idIncident, Callback<Incident> cb);
+    public void deleteIncident(@Path("id") int idIncident, Callback<String> cb);
 
 }

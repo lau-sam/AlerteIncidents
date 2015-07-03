@@ -36,7 +36,7 @@ public class ModificationHistoriqueFragment extends Fragment {
         Button mButtonAnnuler = (Button) rootView.findViewById(R.id.annuler_button);
         Button mButtonEnregistrer = (Button) rootView.findViewById(R.id.bouton_enregistrer);
 
-        final Spinner typeIncidentSpinner = (Spinner) rootView.findViewById(R.id.historiqueSpinner);
+        //final Spinner typeIncidentSpinner = (Spinner) rootView.findViewById(R.id.historiqueSpinner);
         final ArrayAdapter typeIncidentAdapter = new ArrayAdapter(rootView.getContext(),android.R.layout.simple_spinner_item);
 
         Log.e("HistoriqueAdapter.java", "return rootView");
@@ -47,6 +47,7 @@ public class ModificationHistoriqueFragment extends Fragment {
     private void showIncidentDetail(String incident_id) {
         TextView incident_text_id = (TextView) rootView.findViewById(R.id.histo_incident_text_id);
         EditText incident_text_titre = (EditText) rootView.findViewById(R.id.histo_incident_text_titre);
+        EditText incident_text_description = (EditText) rootView.findViewById(R.id.histo_incident_text_desc);
         EditText incident_text_date = (EditText) rootView.findViewById(R.id.histo_incident_text_date);
         EditText incident_text_type_incident = (EditText) rootView.findViewById(R.id.histo_incident_text_type_incident);
 
@@ -55,6 +56,7 @@ public class ModificationHistoriqueFragment extends Fragment {
 
         incident_text_id.setText(mLocalIncident.getString(DbHelper.COLUMN_HLOC_ID));
         incident_text_titre.setText(mLocalIncident.getString(DbHelper.COLUMN_HLOC_TITRE));
+        incident_text_description.setText(mLocalIncident.getString(DbHelper.COLUMN_HLOC_DESCRIPTION));
         incident_text_date.setText(mLocalIncident.getString(DbHelper.COLUMN_HLOC_DATE));
         incident_text_type_incident.setText(mLocalIncident.getString(DbHelper.COLUMN_HLOC_TYPE_ID));
 

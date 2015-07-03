@@ -33,6 +33,7 @@ import fr.epsi.helper.RestApi;
 import retrofit.Callback;
 import retrofit.RestAdapter;
 import retrofit.RetrofitError;
+import retrofit.client.Response;
 
 public class HistoriqueActivity extends Activity {
 	// used to store app title
@@ -170,6 +171,7 @@ public class HistoriqueActivity extends Activity {
 	}
 
 	public void onButtonClick(View v){
+
 		switch (v.getId()){
 			case R.id.bouton_retour:
 				android.support.v7.widget.RecyclerView mRView = (android.support.v7.widget.RecyclerView)
@@ -180,15 +182,16 @@ public class HistoriqueActivity extends Activity {
 
 				break;
 			case R.id.bouton_enregistrer:
-				EditText incident_text_titre = (EditText)
-						((Activity) v.getContext()).findViewById(R.id.histo_incident_text_titre);
-                EditText incident_text_date = (EditText)
+                EditText incident_text_titre = (EditText)
+                        ((Activity) v.getContext()).findViewById(R.id.histo_incident_text_titre);
+                EditText incident_text_description = (EditText)
+                        ((Activity) v.getContext()).findViewById(R.id.histo_incident_text_desc);
+                final EditText incident_text_date = (EditText)
                         ((Activity) v.getContext()).findViewById(R.id.histo_incident_text_date);
                 EditText incident_text_type = (EditText)
                         ((Activity) v.getContext()).findViewById(R.id.histo_incident_text_type_incident);
-                TextView incident_text_id = (TextView)
+                final TextView incident_text_id = (TextView)
                         ((Activity) v.getContext()).findViewById(R.id.histo_incident_text_id);
-
                 Log.e("HistoriqueActivity.java/onButtonClick() : PUT a realiser",String.valueOf(incident_text_titre.getText()));
 
                 SimpleDateFormat fmt = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -196,7 +199,7 @@ public class HistoriqueActivity extends Activity {
 
                 final Incident i = new Incident(Integer.parseInt(incident_text_id.getText().toString()),
                         Build.SERIAL, incident_text_titre.getText().toString(),
-                        Integer.parseInt(incident_text_type.getText().toString()), "",
+                        Integer.parseInt(incident_text_type.getText().toString()), incident_text_description.getText().toString(),
                         fmt.format(now).toString());
 
                 RestAdapter restAdapter = new RestAdapter.Builder()
@@ -214,10 +217,10 @@ public class HistoriqueActivity extends Activity {
                     public void success(Incident incident, retrofit.client.Response response) {
                         /* update bd locale */
                         DbHelper dbHelper = new DbHelper(HistoriqueActivity.this);
-                        dbHelper.updateHloc(i.getIdIncident(), i.getDateIncident(),
+                        dbHelper.updateHloc(i.getIdIncident(), incident_text_date.getText().toString(),
                                 i.getTitreIncident(),String.valueOf(i.getIdTypeIncident()),
                                 i.getDescriptionIncident());
-                        dbHelper.updateIncident(i.getIdIncident(), i.getDateIncident(),
+                        dbHelper.updateIncident(i.getIdIncident(), incident_text_date.getText().toString(),
                                 i.getTitreIncident(),String.valueOf(i.getIdTypeIncident()),
                                 i.getDescriptionIncident());
 
@@ -236,6 +239,49 @@ public class HistoriqueActivity extends Activity {
 
 			case R.id.button_supprimer:
 				Log.e("HistoriqueActivity.java/onButtonClick","Gestion bouton supprimer");
+                new AlertDialog.Builder(this)
+                        .setIcon(android.R.drawable.ic_dialog_alert)
+                        .setTitle("Suppression de l'incident")
+                        .setMessage("Êtes-vous sûr de vouloir supprimer l'incident ?")
+                        .setPositiveButton("Oui", new DialogInterface.OnClickListener()
+                        {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                RestAdapter restAdapter = new RestAdapter.Builder()
+                                        .setEndpoint(MainActivity.API_URL)
+                                        .setLogLevel(RestAdapter.LogLevel.FULL)
+                                        .setLog(new RestAdapter.Log() {
+                                            @Override
+                                            public void log(String msg) {
+                                                Log.d("Retrofit", msg);
+                                            }
+                                        }).build();
+                                RestApi methods = restAdapter.create(RestApi.class);
+                                final int idIncident = 0;
+                                methods.deleteIncident(idIncident, new Callback<String>() {
+                                    @Override
+                                    public void success(String s, Response response) {
+                                        DbHelper dbHelper = new DbHelper(HistoriqueActivity.this);
+
+                                        dbHelper.deleteHloc(idIncident);
+                                        dbHelper.deleteIncident(idIncident);
+
+                                        Toast.makeText(HistoriqueActivity.this, "Success", Toast.LENGTH_SHORT).show();
+                                        Intent intent = new Intent(HistoriqueActivity.this, HistoriqueActivity.class);
+                                        startActivity(intent);
+                                        HistoriqueActivity.this.finish();
+                                    }
+
+                                    @Override
+                                    public void failure(RetrofitError error) {
+                                        Toast.makeText(HistoriqueActivity.this, "Erreur, vérifiez votre connexion internet", Toast.LENGTH_SHORT).show();
+                                    }
+                                });
+                            }
+
+                        })
+                        .setNegativeButton("Non", null)
+                        .show();
 				break;
 		}
 	}

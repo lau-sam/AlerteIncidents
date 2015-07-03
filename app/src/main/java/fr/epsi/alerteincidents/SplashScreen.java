@@ -10,6 +10,8 @@ import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
@@ -24,8 +26,7 @@ public class SplashScreen extends Activity {
 
     ProgressBar p_bar;
 
-    class ProgressCallback implements mCallback
-    {
+    class ProgressCallback implements mCallback {
         @Override
         public void onProgress(int progress) {
             p_bar.setProgress(progress);
@@ -38,12 +39,13 @@ public class SplashScreen extends Activity {
             finish();
         }
     }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-        VarsGlobals.set("IMEI","12345678910111");
+        VarsGlobals.set("IMEI", "12345678910111");
         ActionBar actionBar = getActionBar();
         actionBar.hide();
         this.p_bar = (ProgressBar) this.findViewById(R.id.progressBar);
@@ -56,16 +58,15 @@ public class SplashScreen extends Activity {
         Calendar now_date = Calendar.getInstance();
         long now = now_date.getTimeInMillis();
 
-        if (!sharedpreferences.contains("last_update"))
-        {
+        if (!sharedpreferences.contains("last_update")) {
+
             chargerLaBase = true;
             editor.putLong("last_update", now);
         }
 
         long last = sharedpreferences.getLong("last_update", now);
 
-        if (now - last > 86400000 )
-        {
+        if (now - last > 86400000) {
             chargerLaBase = true;
             editor.putLong("last_update", now);
         }
@@ -73,19 +74,18 @@ public class SplashScreen extends Activity {
         editor.commit();
 
 // la valeur true chargerLaBase ,force l'insertion dans la base de donnees
-        chargerLaBase = true;
-        if (chargerLaBase)
-        {
+        if (isNetworkAvailable()) {
+            chargerLaBase = true;
+        }
+        if (chargerLaBase) {
             DbHelper mDB = new DbHelper(this);
             SQLiteDatabase mDatabase = this.openOrCreateDatabase("DB_AI.db", MODE_PRIVATE, null);
             dropLocalDatabase(mDatabase);
-            Log.e("DROPED ?","NOW");
+            Log.e("DROPED ?", "NOW");
             RequestJson dl = new RequestJson(this);
             dl.loadData(new ProgressCallback());
-        }
-        else
-        {
-            Intent i = new Intent(SplashScreen.this,MainActivity.class);
+        } else {
+            Intent i = new Intent(SplashScreen.this, MainActivity.class);
             startActivity(i);
             finish();
         }
@@ -112,7 +112,13 @@ public class SplashScreen extends Activity {
         db.execSQL(DROP_INCIDENT);
         db.execSQL(CREATE_INCIDENT);
         db.execSQL(CREATE_HLOC);
-        Log.e("SplashScreen.java","create : "+CREATE_HLOC+" ///// "+CREATE_INCIDENT);
+        Log.e("SplashScreen.java", "create : " + CREATE_HLOC + " ///// " + CREATE_INCIDENT);
     }
 
+    private boolean isNetworkAvailable() {
+        ConnectivityManager connectivityManager
+                = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
+    }
 }

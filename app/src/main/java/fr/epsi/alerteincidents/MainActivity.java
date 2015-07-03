@@ -42,12 +42,7 @@ public class MainActivity extends Activity {
 		//ecouteur du bouton map
 		buttonMap.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-				if (isNetworkAvailable())
-					newMap();
-				else
-					alertbox("Pas d'acces internet", "Desole , nous pouvons pas ouvrir l'activite " +
-							"Carte. En effet, vous n'avez pas acces a internet. \nActivez l'option internet" +
-							" puis reessayez !");
+                newMap();
             }
 		});
 		
@@ -140,12 +135,7 @@ public class MainActivity extends Activity {
 		getActionBar().setTitle(mTitle);
 	}
 
-	private boolean isNetworkAvailable() {
-		ConnectivityManager connectivityManager
-				= (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-		NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
-		return activeNetworkInfo != null && activeNetworkInfo.isConnected();
-	}
+
 
 	protected void alertbox(String title, String mymessage)
 	{

@@ -45,6 +45,7 @@ public class PreferencesActivity extends Activity {
 
 		if(inondationsCheck){
 			mInondationsCB.setChecked(true);
+
 		}
 
 		if(incendiesCheck) {
