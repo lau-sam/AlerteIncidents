@@ -31,7 +31,8 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme"
+        android:screenOrientation="portrait">
         <activity
             android:name=".SplashScreen"
             android:label="@string/app_name"
@@ -44,24 +45,26 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name=".CarteActivity"
-            android:label="@string/title_activity_carte" >
+            android:label="@string/title_activity_carte">
         </activity>
         <activity
             android:name=".IncidentActivity"
-            android:label="@string/title_activity_incident" >
+            android:label="@string/title_activity_incident">
         </activity>
         <activity
             android:name=".PreferencesActivity"
-            android:label="@string/title_activity_preferences" >
+            android:label="@string/title_activity_preferences"
+            android:screenOrientation="portrait">
         </activity>
         <activity
             android:name=".HistoriqueActivity"
             android:label="@string/title_activity_historique"
-            android:windowSoftInputMode="adjustPan" >
+            android:windowSoftInputMode="adjustPan">
         </activity>
 
         <meta-data
@@ -73,7 +76,7 @@
 
         <activity
             android:name=".DetailActivity"
-            android:label="@string/title_activity_detail" >
+            android:label="@string/title_activity_detail">
         </activity>
     </application>
 

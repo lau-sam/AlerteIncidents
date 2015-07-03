@@ -117,10 +117,10 @@ public class IncidentActivity extends Activity {
                             public void success(Incident incident, retrofit.client.Response response) {
                                 DbHelper dbHelper = new DbHelper(IncidentActivity.this);
 
-                                dbHelper.insertHloc("", String.valueOf(response.getBody().toString()), i.getDateIncident(),
+                                dbHelper.insertHloc("", String.valueOf(incident.getIdIncident()), i.getDateIncident(),
                                         i.getTitreIncident(),String.valueOf(i.getLongitude()),
                                         String.valueOf(i.getLatitude()), String.valueOf(i.getIdTypeIncident()),i.getDescriptionIncident(), Build.SERIAL);
-                                dbHelper.insertIncident(String.valueOf(i.getIdIncident()), i.getDateIncident(),
+                                dbHelper.insertIncident(String.valueOf(incident.getIdIncident()), i.getDateIncident(),
                                         i.getTitreIncident(),String.valueOf(i.getLongitude()),
                                         String.valueOf(i.getLatitude()), String.valueOf(i.getIdTypeIncident()),i.getDescriptionIncident(), Build.SERIAL);
 
