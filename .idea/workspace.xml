@@ -43,16 +43,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="59f6f95c-ee11-4c56-a3be-b6bdff214961" name="Default" comment="Fin de la base de donnée locale sur les incidents&#10;Fin des markers sur la map">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/fr/epsi/alerteincidents/CarteActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/fr/epsi/alerteincidents/CarteActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/fr/epsi/database/DbHelper.java" afterPath="$PROJECT_DIR$/app/src/main/java/fr/epsi/database/DbHelper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/fr/epsi/alerteincidents/HistoriqueActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/fr/epsi/alerteincidents/HistoriqueActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/fr/epsi/alerteincidents/HistoriqueAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/fr/epsi/alerteincidents/HistoriqueAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/classes/metier/Incident.java" afterPath="$PROJECT_DIR$/app/src/main/java/classes/metier/Incident.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/fr/epsi/alerteincidents/IncidentActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/fr/epsi/alerteincidents/IncidentActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/fr/epsi/alerteincidents/ModificationHistoriqueFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/fr/epsi/alerteincidents/ModificationHistoriqueFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/fr/epsi/helper/RequestJson.java" afterPath="$PROJECT_DIR$/app/src/main/java/fr/epsi/helper/RequestJson.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/fr/epsi/alerteincidents/SplashScreen.java" afterPath="$PROJECT_DIR$/app/src/main/java/fr/epsi/alerteincidents/SplashScreen.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="AlerteIncidents.iws" />
@@ -132,19 +123,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HistoriqueAdapter.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/fr/epsi/alerteincidents/HistoriqueAdapter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2026" max-vertical-offset="2550">
-              <caret line="100" column="54" selection-start-line="100" selection-start-column="54" selection-end-line="100" selection-end-column="54" />
-              <folding>
-                <element signature="e#6931#6932#0" expanded="true" />
-                <element signature="e#6969#6970#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="RequestJson.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/fr/epsi/helper/RequestJson.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -165,6 +143,16 @@
                 <element signature="e#9951#10157#0" expanded="true" />
                 <element signature="e#10146#10147#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RestApi.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/fr/epsi/helper/RestApi.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="195" max-vertical-offset="663">
+              <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -194,8 +182,8 @@
       <file leaf-file-name="IncidentActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/fr/epsi/alerteincidents/IncidentActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.44126984" vertical-offset="1170" max-vertical-offset="3332">
-              <caret line="122" column="76" selection-start-line="122" selection-start-column="76" selection-end-line="122" selection-end-column="76" />
+            <state vertical-scroll-proportion="0.33333334" vertical-offset="1153" max-vertical-offset="3332">
+              <caret line="119" column="0" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -214,8 +202,8 @@
       <file leaf-file-name="DbHelper.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/fr/epsi/database/DbHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.3076925" vertical-offset="1809" max-vertical-offset="6392">
-              <caret line="127" column="19" selection-start-line="127" selection-start-column="19" selection-end-line="127" selection-end-column="19" />
+            <state vertical-scroll-proportion="-2.2307692" vertical-offset="3903" max-vertical-offset="6392">
+              <caret line="247" column="19" selection-start-line="247" selection-start-column="19" selection-end-line="247" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -236,7 +224,7 @@
       <file leaf-file-name="Incident.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/classes/metier/Incident.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1739" max-vertical-offset="2975">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1623" max-vertical-offset="2975">
               <caret line="106" column="0" selection-start-line="106" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
               <folding>
                 <element signature="e#3752#3753#0" expanded="true" />
@@ -1761,11 +1749,11 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_modification_historique.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/fr/epsi/alerteincidents/ModificationHistoriqueFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/fr/epsi/alerteincidents/HistoriqueAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/classes/metier/Incident.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/fr/epsi/alerteincidents/SplashScreen.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/fr/epsi/database/DbHelper.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/fr/epsi/alerteincidents/HistoriqueActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/fr/epsi/helper/RequestJson.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/classes/metier/Incident.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/fr/epsi/alerteincidents/IncidentActivity.java" />
       </list>
     </option>
@@ -2321,7 +2309,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="-4" width="1374" height="732" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32881355" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32881355" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
@@ -2336,14 +2324,14 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32542372" sideWeight="0.4954683" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32963988" sideWeight="0.49713877" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32881355" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33559322" sideWeight="0.81344414" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.59322035" sideWeight="0.81344414" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2322034" sideWeight="0.39274925" order="13" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1925982" sideWeight="0.49170125" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Memory Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="14" side_tool="true" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32904148" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20241691" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4" sideWeight="0.5022659" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4" sideWeight="0.5022659" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16881259" sideWeight="0.50829875" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -2407,7 +2395,15 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="33" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/fr/epsi/alerteincidents/IncidentActivity.java</url>
+          <line>119</line>
+          <properties />
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="34" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -2657,14 +2653,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/fr/epsi/helper/RestApi.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="663" max-vertical-offset="884">
-          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/fr/epsi/alerteincidents/CarteActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="4233" max-vertical-offset="4981">
@@ -2815,14 +2803,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/fr/epsi/database/DbHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.3076925" vertical-offset="1809" max-vertical-offset="6392">
-          <caret line="127" column="19" selection-start-line="127" selection-start-column="19" selection-end-line="127" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/fr/epsi/helper/RequestJson.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.1923075" vertical-offset="1998" max-vertical-offset="4403">
@@ -2845,9 +2825,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://E:/Android/sdk/sources/android-21/android/os/Handler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="11557" max-vertical-offset="12699">
+          <caret line="724" column="0" selection-start-line="724" selection-start-column="0" selection-end-line="724" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/fr/epsi/helper/RestApi.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="663" max-vertical-offset="884">
+          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/classes/metier/Incident.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="573" max-vertical-offset="2975">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1623" max-vertical-offset="2975">
           <caret line="106" column="0" selection-start-line="106" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
           <folding>
             <element signature="e#3752#3753#0" expanded="true" />
@@ -2859,18 +2855,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://E:/Android/sdk/sources/android-21/android/os/Handler.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/fr/epsi/database/DbHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="11557" max-vertical-offset="12699">
-          <caret line="724" column="0" selection-start-line="724" selection-start-column="0" selection-end-line="724" selection-end-column="0" />
+        <state vertical-scroll-proportion="-2.2307692" vertical-offset="3903" max-vertical-offset="6392">
+          <caret line="247" column="19" selection-start-line="247" selection-start-column="19" selection-end-line="247" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/fr/epsi/alerteincidents/IncidentActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44126984" vertical-offset="1170" max-vertical-offset="3332">
-          <caret line="122" column="76" selection-start-line="122" selection-start-column="76" selection-end-line="122" selection-end-column="76" />
+        <state vertical-scroll-proportion="0.33333334" vertical-offset="1153" max-vertical-offset="3332">
+          <caret line="119" column="0" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
           <folding />
         </state>
       </provider>
