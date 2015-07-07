@@ -170,7 +170,7 @@ public class HistoriqueActivity extends Activity {
 		getActionBar().setTitle(mTitle);
 	}
 
-	public void onButtonClick(View v){
+	public void onButtonClick(final View v){
 
 		switch (v.getId()){
 			case R.id.bouton_retour:
@@ -257,7 +257,9 @@ public class HistoriqueActivity extends Activity {
                                             }
                                         }).build();
                                 RestApi methods = restAdapter.create(RestApi.class);
-                                final int idIncident = 0;
+                                //TextView incident_text_id = (TextView) v.findViewById(R.id.histo_incident_text_id);
+
+                                final int idIncident = 0;//Integer.parseInt(incident_text_id.getText().toString());
                                 methods.deleteIncident(idIncident, new Callback<String>() {
                                     @Override
                                     public void success(String s, Response response) {
